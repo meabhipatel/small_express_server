@@ -17,6 +17,10 @@ app.get("/contact", (req, res) => {
     .json({ sucess: true, message: "Welcome to the alanced Contact" });
 });
 
+app.use("*", (req, res) => {
+  res.status(404).json({ sucess: false, message: "Page not found!!!" });
+});
+
 app.listen(3000, () => {
   console.log(`server is running at port :3000`);
 });
